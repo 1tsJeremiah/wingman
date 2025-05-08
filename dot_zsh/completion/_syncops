@@ -1,0 +1,4 @@
+#compdef syncops
+_arguments \
+  '1:script title:(Update\ packages Reboot\ script Install\ Docker Rotate\ logs Sync\ config)' \
+  '2:target machine:(pegasus phoenix vulcan)'
