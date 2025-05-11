@@ -24,3 +24,13 @@
 {"timestamp": "2025-05-11T22:04:15+00:00", "script": "deploy-landscape-script.sh", "status": "⚠️", "note": "Missing shebang"}
 {"timestamp": "2025-05-11T22:04:15+00:00", "script": "deploy-landscape-script.sh", "status": "✅", "note": "Valid"}
 {"timestamp": "2025-05-11T22:04:15+00:00", "script": "enable-landscape-script-plugin.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-11T22:04:15+00:00", "script": "init-gptstate-sync.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-11T22:04:15+00:00", "script": "log-landscape-exec.sh", "status": "MISSING", "note": "Script not found"}
+{"timestamp": "2025-05-11T22:04:15+00:00", "script": "register-landscape-client.sh.tmpl", "status": "MISSING", "note": "Script not found"}
+{"timestamp": "2025-05-11T22:04:15+00:00", "script": "sync-gpt.sh", "status": "⚠️", "note": "Missing shebang"}
+{"timestamp": "2025-05-11T22:04:15+00:00", "script": "sync-gpt.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-11T22:04:15+00:00", "script": "setup-gpt-sync-timer.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-11T22:11:22+00:00", "script": "export-gpg-keys.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-11T22:11:22+00:00", "script": "deploy-landscape-script.sh", "status": "⚠️", "note": "Missing shebang"}
+{"timestamp": "2025-05-11T22:11:22+00:00", "script": "deploy-landscape-script.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-11T22:11:22+00:00", "script": "enable-landscape-script-plugin.sh", "status": "✅", "note": "Valid"}
