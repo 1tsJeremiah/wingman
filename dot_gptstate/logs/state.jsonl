@@ -54,3 +54,19 @@
 {"timestamp": "2025-05-12T00:08:45+00:00", "script": "deploy-landscape-script.sh", "status": "⚠️", "note": "Missing shebang"}
 {"timestamp": "2025-05-12T00:08:45+00:00", "script": "deploy-landscape-script.sh", "status": "✅", "note": "Valid"}
 {"timestamp": "2025-05-12T00:08:45+00:00", "script": "enable-landscape-script-plugin.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-12T00:08:45+00:00", "script": "init-gptstate-sync.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-12T00:08:45+00:00", "script": "log-landscape-exec.sh", "status": "MISSING", "note": "Script not found"}
+{"timestamp": "2025-05-12T00:08:45+00:00", "script": "register-landscape-client.sh.tmpl", "status": "MISSING", "note": "Script not found"}
+{"timestamp": "2025-05-12T00:08:45+00:00", "script": "sync-gpt.sh", "status": "⚠️", "note": "Missing shebang"}
+{"timestamp": "2025-05-12T00:08:45+00:00", "script": "sync-gpt.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-12T00:08:45+00:00", "script": "setup-gpt-sync-timer.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-12T00:08:59+00:00", "action": "checkstack-run", "note": "wingman check executed"}
+{"timestamp": "2025-05-12T00:10:59+00:00", "action": "apply", "note": "chezmoi apply executed via wingman"}
+{"timestamp": "$TIMESTAMP", "action": "fix-docker", "note": "User added to docker group"}
+{"timestamp": "2025-05-12T01:05:54+00:00", "action": "logs", "note": "Viewed recent checkstack + state entries"}
+{"timestamp": "2025-05-12T01:05:54+00:00", "action": "dns", "note": "wingman dns scaffold triggered"}
+{"timestamp": "2025-05-12T01:36:42+00:00", "action": "logs", "note": "Viewed recent checkstack + state entries"}
+{"timestamp": "2025-05-12T03:38:57+00:00", "script": "export-gpg-keys.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-12T03:38:57+00:00", "script": "deploy-landscape-script.sh", "status": "⚠️", "note": "Missing shebang"}
+{"timestamp": "2025-05-12T03:38:57+00:00", "script": "deploy-landscape-script.sh", "status": "✅", "note": "Valid"}
+{"timestamp": "2025-05-12T03:38:57+00:00", "script": "enable-landscape-script-plugin.sh", "status": "✅", "note": "Valid"}
