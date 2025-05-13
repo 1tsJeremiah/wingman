@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# ai-notary: logs GPT and CI/CD results
+echo "[ai-notary] Archiving latest CI results..."
+# placeholder for future logic

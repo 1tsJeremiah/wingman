@@ -1,0 +1,41 @@
+name: ChatGPT PR Review
+
+description: >
+  Automatically review PRs with OpenAI ChatGPT
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  genai-code-review:
+    name: GPT Code Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Run GenAI Reviewer
+        uses: cirolini/genai-code-review@v2
+        with:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_pr_id: ${{ github.event.number }}
+          openai_model: "gpt-3.5-turbo"
+          openai_temperature: 0.4
+          openai_max_tokens: 2048
+          mode: files
+          language: en
+          custom_prompt: |
+            You are Wingman, a DevOps and full-stack automation assistant.
+            Your goal is to review pull requests for:
+              - Security misconfigurations
+              - Shell or automation anti-patterns
+              - Infrastructure-as-code quality
+              - Node.js and Python lint/code smells
+              - Efficient CI/CD logic
+
+            Provide constructive, focused feedback in bullet form.
+            Only comment if there's value to add — otherwise be concise.
+
+            Sign off as: _Reviewed by Wingman 🪽_

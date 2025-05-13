@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# gpt-deployer: deploys manifests from GPT context
+echo "[gpt-deployer] Deploying latest service fragment..."
+# placeholder for future logic
