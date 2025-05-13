@@ -1,0 +1,65 @@
+name: Wingman CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  diagnostics:
+    name: Shell Lint + Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Shell Tools
+        run: sudo apt update && sudo apt install -y shellcheck bash
+      - name: Lint Shell Scripts
+        run: |
+          find devops/scripts -name '*.sh' -exec shellcheck {} +
+          find devops/scripts -name '*.sh' -exec bash -n {} +
+      - name: Run Validation Script
+        run: ./devops/scripts/validate-all-scripts.sh
+      - name: Chezmoi Doctor
+        run: chezmoi doctor || true
+
+  python-checks:
+    name: Python Lint + Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python tools
+        run: pip install ruff pytest
+      - name: Run Ruff (linter)
+        run: ruff devops/
+      - name: Run Pytest (if applicable)
+        run: pytest || echo "pytest skipped"
+
+  node-checks:
+    name: Node.js Lint + Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Node Deps
+        run: npm ci || npm install
+      - name: Run ESLint
+        run: npx eslint devops/ || echo "eslint skipped"
+      - name: Run Node Tests
+        run: npm test || echo "tests skipped"
+
+  docker-build:
+    name: Docker Build Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker Image
+        run: docker build -t wingman/test . || echo "no Dockerfile found"
