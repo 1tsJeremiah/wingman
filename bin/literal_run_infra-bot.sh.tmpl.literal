@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# infra-bot: suggests infra scaling paths
+echo "[infra-bot] Collecting metrics..."
+# placeholder for future logic

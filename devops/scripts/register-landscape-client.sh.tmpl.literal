@@ -1,0 +1,2 @@
+# Placeholder .tmpl for registering Landscape client
+client_name = "{{ .hostname }}"
