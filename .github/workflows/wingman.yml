@@ -1,0 +1,26 @@
+name: Wingman CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH for server access
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.WINGMAN_DEPLOY_KEY }}
+
+      - name: Sync with server chezmoi
+        run: |
+          ssh -o StrictHostKeyChecking=no wingman@198.96.88.177 "chezmoi apply --verbose"
+
+      - name: Trigger Portainer Agent Deployment
+        run: |
+          ssh wingman@198.96.88.177 "~/scripts/init_wingman.sh"
