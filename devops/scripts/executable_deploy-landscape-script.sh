@@ -1,4 +1,4 @@
-#!/bin/bash/bin/bash
+#!/bin/bash
 # deploy-landscape-script.sh - Create and execute a script on a registered Landscape client via API
 
 set -e
