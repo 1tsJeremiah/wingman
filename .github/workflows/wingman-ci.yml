@@ -36,7 +36,7 @@ jobs:
       - name: Install Python tools
         run: pip install ruff pytest
       - name: Run Ruff (linter)
-        run: ruff devops/
+        run: ruff python/
       - name: Run Pytest (if applicable)
         run: pytest || echo "pytest skipped"
 
@@ -50,11 +50,17 @@ jobs:
         with:
           node-version: '20'
       - name: Install Node Deps
-        run: npm ci || npm install
+        run: |
+          cd node
+          npm ci || npm install
       - name: Run ESLint
-        run: npx eslint devops/ || echo "eslint skipped"
+        run: |
+          cd node
+          npx eslint . || echo "eslint skipped"
       - name: Run Node Tests
-        run: npm test || echo "tests skipped"
+        run: |
+          cd node
+          npm test || echo "tests skipped"
 
   docker-build:
     name: Docker Build Check
