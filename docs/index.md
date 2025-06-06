@@ -8,3 +8,13 @@ Welcome to **Wingman** – your DevOps automation hub.
 - [GitHub Repository](https://github.com/1tsjeremiah/wingman)
 - [CI/CD Status](https://github.com/1tsjeremiah/wingman/actions)
 - [Docs](./index.md)
+
+## Configuration
+
+The Landscape registration scripts expect the following environment variables to be set or provided in a `.env` file at the repository root:
+
+- `LANDSCAPE_TITLE` – the computer title to register
+- `LANDSCAPE_ACCOUNT` – your Landscape account name
+- `LANDSCAPE_REG_KEY` – the registration key issued by Landscape
+
+These values are loaded automatically when running the registration script.
