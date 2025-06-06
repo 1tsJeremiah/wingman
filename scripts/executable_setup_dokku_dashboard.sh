@@ -4,7 +4,8 @@
 set -euo pipefail
 
 APP="dashboard"
-PLUGIN_URL="https://github.com/dokku/dokku-dashboard.git"
+# use the maintained dokku-dashboard fork
+PLUGIN_URL="https://github.com/lohanbodevan/dokku-dashboard.git"
 DASHBOARD_DOMAIN="dashboard.${TRAEFIK_DOMAIN_PREFIX}.pegasuswingman.com"
 
 # install plugin if missing
@@ -33,6 +34,11 @@ cat <<LABELS | dokku docker-options:add "$APP" deploy
 --label traefik.http.routers.${APP}.rule=Host(\"$DASHBOARD_DOMAIN\")
 --label traefik.http.routers.${APP}.entrypoints=web,websecure
 --label traefik.http.routers.${APP}.tls.certresolver=myresolver
+--health-cmd "curl -f http://localhost:5000/health || exit 1"
+--health-interval 30s
+--health-retries 3
+--health-start-period 10s
+--health-timeout 3s
 LABELS
 
 dokku letsencrypt:enable "$APP"
