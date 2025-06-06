@@ -8,3 +8,4 @@ Welcome to **Wingman** – your DevOps automation hub.
 - [GitHub Repository](https://github.com/1tsjeremiah/wingman)
 - [CI/CD Status](https://github.com/1tsjeremiah/wingman/actions)
 - [Docs](./index.md)
+- [Remote Dotfile Sync](./chezmoi-server-setup.md)
