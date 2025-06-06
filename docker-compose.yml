@@ -24,11 +24,7 @@ services:
       - traefik_letsencrypt:/letsencrypt
     labels:
       - "traefik.enable=true"
-<<<<<<< HEAD
-      - "traefik.http.routers.traefik.rule=Host(${TRAEFIK_DOMAIN_PREFIX}.pegasuswingman.com)"
-=======
       - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_DOMAIN_PREFIX}.pegasuswingman.com`)"
->>>>>>> origin/main
       - "traefik.http.routers.traefik.entrypoints=web"
       - "traefik.http.routers.traefik.service=api@internal"
 
