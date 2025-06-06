@@ -16,7 +16,7 @@ apt-key list | grep -E '^pub' | while read -r line; do
   KEY_ID=$(echo "$line" | awk '{print $2}' | cut -d'/' -f2)
   if [[ -n "$KEY_ID" ]]; then
     echo "🔑 Exporting $KEY_ID..."
-    apt-key export "$KEY_ID" > "~/gpg-export/$KEY_ID.gpg"
+    apt-key export "$KEY_ID" > "$HOME/gpg-export/$KEY_ID.gpg"
   fi
 done
 
