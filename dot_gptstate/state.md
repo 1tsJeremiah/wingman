@@ -42,7 +42,7 @@ Example:
 - `~/devops/scripts/enable-landscape-script-plugin.sh`
 - `~/devops/scripts/init-gptstate-sync.sh`
 - `~/devops/scripts/log-landscape-exec.sh`
-- `~/devops/sync/sync-gpt.sh`
+- `~/devops/sync/executable_sync-gpt.sh`
 - `~/.gptstate/logs/state.jsonl`
 
 <!-- END GPT_USAGE_GUIDE -->
