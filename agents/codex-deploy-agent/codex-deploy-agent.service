@@ -1,0 +1,15 @@
+[Unit]
+Description=Codex Deploy Agent
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/codex-deploy-agent
+ExecStart=%h/codex-deploy-agent/fetch-and-deploy.sh
+Restart=always
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
