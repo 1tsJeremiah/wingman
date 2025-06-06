@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-set +H  # Disable history expansion
+set +H  # Disable history expansion in bash
 
 SCRIPT_NAME=$(basename "$0")
 AGENT_NAME="portainer_edge_agent"
