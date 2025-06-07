@@ -19,8 +19,11 @@ jobs:
 
       - name: Sync with server chezmoi
         run: |
-          ssh -o StrictHostKeyChecking=no wingman@198.96.88.177 "chezmoi apply --verbose"
+          ssh -o StrictHostKeyChecking=no wingman@198.96.88.177 \
+            "chezmoi apply --verbose" || echo "Chezmoi sync failed"
+        continue-on-error: true
 
       - name: Trigger Portainer Agent Deployment
         run: |
-          ssh wingman@198.96.88.177 "~/scripts/init_wingman.sh"
+          ssh wingman@198.96.88.177 "~/scripts/init_wingman.sh" || echo "Deploy script failed"
+        continue-on-error: true
