@@ -9,3 +9,4 @@ Welcome to **Wingman** – your DevOps automation hub.
 - [CI/CD Status](https://github.com/1tsjeremiah/wingman/actions)
 - [Docs](./index.md)
 - [Remote Dotfile Sync](./chezmoi-server-setup.md)
+- [Jenkins Chat Bootstrap](./chat-bootstrap-jenkins.md)
