@@ -8,3 +8,7 @@ Welcome to **Wingman** – your DevOps automation hub.
 - [GitHub Repository](https://github.com/1tsjeremiah/wingman)
 - [CI/CD Status](https://github.com/1tsjeremiah/wingman/actions)
 - [Docs](./index.md)
+
+## Utilities
+
+- `scripts/verify_codex_changes.sh` – audit recent repository changes and inspect Codex session logs.
